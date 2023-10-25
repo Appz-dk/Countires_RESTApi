@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-import { ChevronDown } from "../assets/ChevronDown";
+import { ChevronDown } from "../../assets/ChevronDown";
 import "./Filter.css"
-import { ChevronUp } from "../assets/ChevronUp";
+import { ChevronUp } from "../../assets/ChevronUp";
 
 const filterOptions = ["Africa", "America", "Asia", "Europe", "Oceania"]
 const defaultOption = "Filter by Region"

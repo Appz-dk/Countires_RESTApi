@@ -1,5 +1,5 @@
-import { MoonSolid } from "../assets/MoonSolid";
-import { MoonRegular } from "../assets/MoonReg";
+import { MoonSolid } from "../../assets/MoonSolid";
+import { MoonRegular } from "../../assets/MoonReg";
 import "./Header.css"
 
 

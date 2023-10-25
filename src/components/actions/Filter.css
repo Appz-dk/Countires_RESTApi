@@ -1,7 +1,10 @@
 .filter-dropdown {
   color: var(--text-clr);
-  max-width: 20rem;
+  max-width: 15rem;
+  min-width: 12rem;
   position: relative;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-rad);
 
   & button {
     font-weight: 300;
@@ -12,8 +15,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    min-width: 12rem;
-    max-width: 15rem;
     border-radius: var(--border-rad);
     border: none;
     cursor: pointer;
@@ -41,6 +42,7 @@
     width: 100%;
     min-width: 12rem;
     max-width: 15rem;
+    box-shadow: var(--box-shadow);
   }
 
   & li {

@@ -1,0 +1,40 @@
+.flag-card {
+  background-color: var(--element-clr);
+  width: 100%;
+  max-width: 24rem;
+  margin: 0 auto;
+  border-radius: var(--border-rad);
+  box-shadow: var(--box-shadow);
+  
+  & img {
+    border-radius: var(--border-rad) var(--border-rad) 0 0;
+    width: 100%;
+  }
+
+  & .flag-card-name {
+    font-weight: 800;
+    font-size: var(--fs-600);
+  }
+
+  & .flag-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+    font-size: var(--fs-500);
+  }
+
+  & .flag-card-info div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  & .flag-card-info p {
+    font-weight: 600;
+  }
+
+  & .flag-card-info span {
+    font-weight: 300;
+  }
+}
