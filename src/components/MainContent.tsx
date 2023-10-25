@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import "./MainContent.css"
 import Search from "./actions/Search";
 import Filter from "./actions/Filter";
@@ -9,12 +9,24 @@ const defaultOption = "Filter by Region"
 
 const MainContent = () => {
   const [filterOption, setFilterOption] = useState(defaultOption)
+  const [searchText, setSearchText] = useState("")
 
-  const filteredFlags = filterOption !== defaultOption ? flags.filter(flag => flag.region === filterOption) : flags
+  const filteredFlags = useMemo(() => {
+    if (filterOption === defaultOption && !searchText) return flags
+
+    let filteredFlags = [...flags]
+    if (filterOption !== defaultOption) {
+      filteredFlags = filteredFlags.filter(flag => flag.region === filterOption)
+    }
+    if (searchText) {
+      filteredFlags = filteredFlags.filter(flag => flag.name.toLowerCase().includes(searchText.toLowerCase()))
+    }
+    return filteredFlags
+  }, [filterOption, searchText])
 
   return <main className="main-content">
     <div className="main-filter-container">
-    <Search />
+    <Search searchText={searchText} setSearchText={setSearchText}/>
     <Filter filterOption={filterOption} filterOptions={filterOptions} setFilterOption={setFilterOption} defaultOption={defaultOption}/>
     </div>
     {filteredFlags.map((flag, idx) => (
