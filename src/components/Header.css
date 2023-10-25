@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.theme-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 600;
+}
+
+.theme-actions img {
+  width: 20px;
+  aspect-ratio: 1;
+}
