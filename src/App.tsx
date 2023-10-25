@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css'
 import Header from './components/Header'
+import MainContent from './components/MainContent';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
     <Header theme={theme} toggleTheme={toggleTheme}/>
+    <MainContent />
     </>
   )
 }

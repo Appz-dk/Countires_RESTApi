@@ -1,0 +1,27 @@
+.search-container {
+  background-color: var(--element-clr);
+  border-radius: var(--border-rad);
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1rem;
+  box-shadow: var(--box-shadow);
+  max-width: 35rem;
+
+  & svg {
+    width: 20px;
+    fill: var(--input-clr);
+  }
+
+  & input {
+    width: 100%;
+    color: var(--input-clr);
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-weight: 300;
+
+    &::placeholder {
+      color: var(--input-clr)
+    }
+  }
+}
