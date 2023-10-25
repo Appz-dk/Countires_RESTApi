@@ -3,12 +3,15 @@ import { ChevronDown } from "../../assets/ChevronDown";
 import "./Filter.css"
 import { ChevronUp } from "../../assets/ChevronUp";
 
-const filterOptions = ["Africa", "America", "Asia", "Europe", "Oceania"]
-const defaultOption = "Filter by Region"
+type FilterProps = {
+  filterOption: string
+  filterOptions: string[]
+  defaultOption: string
+  setFilterOption: React.Dispatch<React.SetStateAction<string>>
+}
 
-const Filter = () => {
+const Filter: React.FC<FilterProps> = ({filterOption, filterOptions, defaultOption, setFilterOption}) => {
   const [open, setOpen] = useState(false)
-  const [filterOption, setFilterOption] = useState(defaultOption)
   const dropdownRef = useRef<HTMLButtonElement>(null)
 
   const handleOptionChange = (opt: string) => {

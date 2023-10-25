@@ -1,15 +1,23 @@
-import Search from "./actions/Search";
+import { useState } from "react";
 import "./MainContent.css"
+import Search from "./actions/Search";
 import Filter from "./actions/Filter";
 import FlagCard from "./flag/FlagCard";
 
+const filterOptions = ["Africa", "Americas", "Asia", "Europe", "Oceania"]
+const defaultOption = "Filter by Region"
+
 const MainContent = () => {
+  const [filterOption, setFilterOption] = useState(defaultOption)
+
+  const filteredFlags = filterOption !== defaultOption ? flags.filter(flag => flag.region === filterOption) : flags
+
   return <main className="main-content">
     <div className="main-filter-container">
     <Search />
-    <Filter />
+    <Filter filterOption={filterOption} filterOptions={filterOptions} setFilterOption={setFilterOption} defaultOption={defaultOption}/>
     </div>
-    {flags.map((flag, idx) => (
+    {filteredFlags.map((flag, idx) => (
     <FlagCard key={flag.name + idx} flag={flag}/>
     ))}
   </main>;
